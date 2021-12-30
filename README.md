@@ -1,6 +1,24 @@
-## Paso 1: Ejegir carpeta para el proyecto y el entorno
-## Paso 2: En la carpeta para el proyecto hacer git clone
-    git clone https://github.com/miguelsantos-wh/refugio.git
+## Paso 1: Deste tu línea de comandos elige una carpeta donde albergar el proyecto
+**Puede ser el home (~) o puedes crear otra carpeta para almacenarlo dentro de este.
+**
+*Puedes posicionarte directamente a tu directorio "Home" en cualquier momento con:*
+
+```bash
+$ cd
+```
+
+
+## Paso 2: En la carpeta para el proyecto haz un clon del repositorio
+Si no tienes una llave SSH configurada puedes usar la url HTTPS
+*https://github.com/manuel-wh/refugio.git*
+
+Si cuentas con tus llaves SSH:
+*git@github.com:manuel-wh/refugio.git*
+
+*Solo reemplaza la url por la indicada*
+
+    $ git clone <url>
+
 ## Paso 3: Crear entorno en la carpeta para el entorno
     mkvirtualenv refugioenv -p=2.7
 #### Confirmar que sea en python 2.7
