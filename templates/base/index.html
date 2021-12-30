@@ -1,0 +1,15 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+App Mascota
+{% endblock %}
+
+{% block content %}
+<div>
+    <a class="btn btn-primary" href="{% url 'mascota:mascota_listarFunction' %}">Formulario Funtion-Based Views</a>
+    <a class="btn btn-primary" href="{% url 'mascota:mascota_listar' %}">Formulario Class-Based Views</a>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

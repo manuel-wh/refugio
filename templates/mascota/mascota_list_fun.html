@@ -1,0 +1,60 @@
+{% extends 'base/base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+Funciones
+{% endblock %}
+
+{% block header %}
+<h2>App Mascotas - Usando Funciones</h2>
+{% endblock %}
+
+{% block content %}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>#</td>
+            <td>Nombre</td>
+            <td>Sexo</td>
+            <td>Edad</td>
+            <td>Fecha de Rescate</td>
+            <td>Adoptante</td>
+            <td>Fotografía</td>
+            <td>Acciones</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% if mascotas %}
+        {% for mascota in mascotas %}
+
+        <tr>
+            <td>{{ mascota.id }}</td>
+            <td>{{ mascota.nombre }}</td>
+            <td>{{ mascota.sexo }}</td>
+            <td>{{ mascota.edad_aprox }}</td>
+            <td>{{ mascota.fecha_rescate }}</td>
+            <td>{{ mascota.persona.nombre}} {{ mascota.persona.apellidos }}</td>
+            {% if mascota.imagen %}
+            <td><img src="{{ mascota.imagen.url }}" alt="Imagen perrito" width="120px" height="100px"></td>
+            {% else %}
+            <td><img src="{% static 'img/obito.png' %}" alt="Imagen perrito" width="120px" height="100px"></td>
+            {% endif %}
+            <td><a class="btn btn-primary" href="{% url 'mascota:mascota_editarFunction' mascota.id %}">Editar</a>
+            <a class="btn btn-danger" href="{% url 'mascota:mascota_eliminarFunction' mascota.id %}">Eliminar</a></td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <h1>No hay registros</h1>
+        {% endif %}
+    </tbody>
+</table>
+
+<a class="btn btn-primary" href="{% url 'mascota:mascota_crearFunction' %}">Agregar nuevo</a>
+
+
+
+
+{% endblock %}}
+
+{% block footer %}
+{% endblock %}

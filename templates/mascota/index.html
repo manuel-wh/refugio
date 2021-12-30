@@ -1,0 +1,21 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+App Mascota
+{% endblock %}
+
+{% block content %}
+<h3>Mascotas</h3>
+<div>
+    <a class="btn btn-primary" href="{% url 'mascota:mascota_listarFunction' %}">Formulario Funtion-Based Views</a>
+    <a class="btn btn-primary" href="{% url 'mascota:mascota_listar' %}">Formulario Class-Based Views</a>
+</div>
+<h3>Solicitudes</h3>
+<div>
+    <a class="btn btn-primary" href="{% url 'adopcion:solicitud_listarFuncion' %}">Formulario Funtion-Based Views</a>
+    <a class="btn btn-primary" href="{% url 'adopcion:solicitud_listar' %}">Formulario Class-Based Views</a>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

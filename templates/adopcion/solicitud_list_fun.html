@@ -1,0 +1,48 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+Funciones
+{% endblock %}
+
+{% block header %}
+<h2>App Mascotas - Usando Funciones</h2>
+{% endblock %}
+
+{% block content %}
+
+<table class="table table-bordered">
+<thead>
+    <tr>
+        <td>No. Solicitud</td>
+        <td>Adoptante</td>
+        <td>No. Mascotas</td>
+        <td>Razones</td>
+        <td>Acciones</td>
+    </tr>
+
+</thead>
+<tbody>
+    {% if solicitudes %}
+    {% for solicitud in solicitudes %}
+    <tr>
+        <td>{{ solicitud.id }}</td>
+        <td>{{ solicitud.persona.nombre }} {{ solicitud.persona.apellidos }}</td>
+        <td>{{ solicitud.numero_mascotas }}</td>
+        <td>{{ solicitud.razones }}</td>
+
+        <td>
+            <a class="btn btn-primary" href="#">Editar</a>
+            <a class="btn btn-danger" href="#">Eliminar</a>
+        </td>
+    </tr>
+    {% endfor %}
+    {% else %}
+    <h1>No hay registros</h1>
+    {% endif %}
+</tbody>
+</table>
+<a class="btn btn-primary" href="{% url 'adopcion:solicitud_crearFuncion' %}">Agregar nuevo</a>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

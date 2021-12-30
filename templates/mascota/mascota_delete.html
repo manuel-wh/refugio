@@ -1,0 +1,21 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+Clases
+{% endblock %}
+
+{% block header %}
+<h2>App Mascotas - Usando Clases</h2>
+{% endblock %}
+
+{% block content %}
+<form method="POST" enctype="multipart/form-data">
+
+    <!-- Eltoken siempre debe ir  -->
+    {% csrf_token %}
+    <h2>¿Desea eliminar el registro de {{ object.nombre }} ?</h2>
+
+<button class="btn btn-danger" type="submit" >Sí, eliminar</button>
+<a class="btn btn-default" href="{% url 'mascota:mascota_listar'  %}">Cancelar</a>
+</form>
+{% endblock %}
