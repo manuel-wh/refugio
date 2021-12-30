@@ -3,25 +3,39 @@
 **
 *Puedes posicionarte directamente a tu directorio "Home" en cualquier momento con:*
 
-```bash
-$ cd
-```
+	cd
 
 
 ## Paso 2: En la carpeta para el proyecto haz un clon del repositorio
 Si no tienes una llave SSH configurada puedes usar la url HTTPS
+
 *https://github.com/manuel-wh/refugio.git*
 
 Si cuentas con tus llaves SSH:
+
 *git@github.com:manuel-wh/refugio.git*
 
 *Solo reemplaza la url por la indicada*
 
-    $ git clone <url>
+	git clone <url>
 
-## Paso 3: Crear entorno en la carpeta para el entorno
-    mkvirtualenv refugioenv -p=2.7
-#### Confirmar que sea en python 2.7
+Después ingresa a la carpeta del proyecto.
+
+	cd refugio
+
+## Paso 3: Crear entorno virtual en la carpeta del proyecto
+Asegurate de tener instalado el entorno virtual de Python `virtualenv`
+
+	which virtualenv
+Si no lo tienes instalado ejecuta:
+
+	pip install virtualenv
+Ahora crearemos el entorno virtual.
+
+	virtualenv <nombre_de_tu_entorno>
+
+
+### Confirmar que sea en python 2.7
     python -V
 ## Paso 4: Desactivar e iniciar entorno
 #### Para desactivar podemos hacer:
