@@ -34,34 +34,33 @@ Ahora crearemos el entorno virtual.
 
 	virtualenv <nombre_de_tu_entorno>
 
+Verifica que lo instalaste con la version 2.7 de Python
 
-### Confirmar que sea en python 2.7
     python -V
-## Paso 4: Desactivar e iniciar entorno
-#### Para desactivar podemos hacer:
-    deactivate
-#### Para iniciar podemos hacer
-    workon refugioenv
-#### o estando en la carpeta del entorno
+
+Puedes usar este comando para instalar el entorno  con la versión que tú le especifíques.
+
+	virtualenv -p /usr/bin/python2.7 <nombre_de_tu_entorno>
+
+
+## Paso 4: Activar y desactivar el entorno
+##### Para activar el entorno ingresamos a la carpeta en la que se creo el entorno y escribimos:
+
     source bin/activate
+Si aparece un texto entre parentesis en tu linea de comandos es que lograste ingresar:
+
+`(venv) usuario@usuario:~/refugio/venv$`
+##### Para salir del entorno virtual soilo escribe
+    deactivate
+
 ## Paso 5: instalamos dependencias con el entorno iniciado
     pip install  -r requeriments.txt
-## Paso 6: Crear base de datos
-    sudo -u postgres createdb refugio
-## Paso 7: Crear usuario y dar privilegios en postgresql:
-    sudo -u postgres psql template1
-    CREATE USER refugio WITH PASSWORD 'password';
-    GRANT ALL PRIVILEGES ON DATABASE refugio to refugio;
-    \c refugio
-    GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO refugio;
-    GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO refugio;
-#### para salir usar:
-    \q
-## Paso 8: Crear migraciones desde la carpeta del proyecto
+
+## Paso 6: Crear migraciones desde la carpeta del proyecto
     ./runserver makemigrations
-## Paso 9: Hacer la migracion
+## Paso 7: Hacer la migracion
     ./runserver migrate
-## Paso 10: Iniciar el proyecto:
+## Paso 8: Iniciar el proyecto:
     ./manage.py runserver
-## Paso 11: Para desactivar el proyecto:
+## Paso 9: Para desactivar el proyecto:
     Ctrl+c
